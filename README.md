@@ -24,7 +24,7 @@ The answer is discovered by converting each number from its decimal form into it
 
 You cick on each question's answer in turn and are taken to the next page, containing the next question, at the end, if you haven't answered all of the questions correctly you are taken to a page with a message reading "Sorry - you did not get all the questions correct.".
 
-So I was on about my third attempt at the questions when I noticed that the URL of the page I was currently visiting contained my previous answers! At this point the solution to the exercise dawned on me.
+On about my third attempt at the questions, I noticed that the URL of the page I was currently visiting contained my previous answers! At this point the solution to the exercise dawned on me, as it should to any Developer.
 
 There are six questions, each having a set of six possible answers (46656 possible combinations), the failure message is embedded into the page for 46655 of these... python and BASH time - see script.py.
 
