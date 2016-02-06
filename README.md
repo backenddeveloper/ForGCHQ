@@ -9,10 +9,15 @@ The puzzle entry point can be found here: [http://www.gchq.gov.uk/puzz/pages/ind
 A simple example of one of the questions is Q5. What comes after 74, 105, 110, 103, 108, 101, 98, 101, 108, 108? 
 
 a) 108
+
 b) 101
+
 c) 115
+
 d) 123
+
 e) 111
+
 f) 103
 
 The answer is discovered by converting each number from its decimal form into its ASCII counterpart, spelling "JINGLEBELL", the obvious following character is "S" or 155 or (c). 
