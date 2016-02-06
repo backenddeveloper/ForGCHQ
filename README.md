@@ -1,3 +1,5 @@
+#Webcrawler vs GCHQ puzzle
+
 This is the tale of the day I (legally) hacked a GCHQ challange page to get the answers to a puzzle...
 
 The puzzle was part two of five[?] challanges the British Government Communications HeadQuarters published online in the hopes of attracting brilliant minds to work for them.
@@ -19,45 +21,7 @@ You cick on each question's answer in turn and are taken to the next page, conta
 
 So I was on about my third attempt at the questions when I noticed that the URL of the page I was currently visiting contained my previous answers! At this point the solution to the exercise dawned on me.
 
-There are six questions, each having a set of six possible answers (46656 possible combinations), the failure message is embedded into the page for 46655 of these... python and BASH time.
-
-########################################################
-#!/usr/bin/python2.7
-
-import os
-
-script = '''
-#!/bin/bash
-for i in $(ls)
-do
-    if [[ ! -z $(diff $i AAAAAA.html) ]]
-    then
-        echo $i ;
-    fi
-done
-'''
-
-def perform(command):
-    os.system(command)
-
-perform("mkdir temp_files")
-perform("echo \"" + script + "\" > temp_files/test.sh")
-perform("chmod +x temp_files/test.sh")
-
-letters = ['A' , 'B' ,'C' , 'D' , 'E' , 'F']
-
-for letter1 in letters:
-    for letter2 in letters:
-        for letter3 in letters:
-            for letter4 in letters:
-                for letter5 in letters:
-                    for letter6 in letters:
-                        perform("cd temp_files && wget http://s3-eu-west-1.amazonaws.com/puzzleinabucket/" + letter1 + letter2 + letter3 + letter4 + letter5 + letter6 + ".html &> /dev/null")
-
-perform("temp_files/test.sh > output.txt")
-perform("rm temp_files -rf")
-
-########################################################
+There are six questions, each having a set of six possible answers (46656 possible combinations), the failure message is embedded into the page for 46655 of these... python and BASH time - see script.py.
 
 Although slightly convoluted, creating and removing temporary files in the process, it works quite well, putting the following into output.txt in the working directory: DEFACE.html
 
