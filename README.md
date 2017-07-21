@@ -1,6 +1,6 @@
 #Webcrawler vs GCHQ puzzle
 
-This is the tale of the day I (legally) hacked a GCHQ challange page to get the answers to a puzzle...
+The lazy way to solve GCHQ puzzles.
 
 The puzzle was part two of five[?] challanges the British Government Communications HeadQuarters published online in the hopes of attracting brilliant minds to work for them.
 
